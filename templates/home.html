@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} Home Page {% endblock title %}
+{% block content %}
+
+    <p id="para"> Please enter the fields below to check whether you are diabetic or non-daibetic</p>
+
+<div class="center">
+    <p>All feilds are required:-</p>
+
+    <form action="/predict", method = "post" autocomplete="off" required>
+        <p><input type="text" name="Pregnancies" placeholder=" No. of Pregnancies" required ></p>
+        <p><input type="text" name="Glocose" placeholder=" Blood Glucose level" ></p>
+        <p><input type="text" name="BloodPressure" placeholder="Blood Pressure" required></p>
+        <p><input type="text" name="SkinThickness" placeholder="Skin Thickness" required ></p>
+        <p><input type="text" name="Insulin" placeholder=" Blood Insulin Levels " required ></p>
+        <p><input type="text" name="BMI" placeholder="BMI" required ></p>
+        <p><input type="text" name="Diabetes Pedigre Function" placeholder="Diabetes Pedigre Function" required></p>
+        <p><input type="text" name="Age" placeholder="Age" required ></p>
+        <p id = "submit"> <input type= "submit" value= PREDICT > </p>
+
+    <br><br>
+
+    <h3>{{pred}}</h3>
+    </form>
+</div>
+{% endblock content %}
